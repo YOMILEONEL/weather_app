@@ -28,6 +28,7 @@ interface WeatherDataProps {
 const DisplayWeather: React.FC = () => {
   const api_key = "0cc86d16bf572f78cdc96c096c7627e5";
   const api_Endpoint = "https://api.openweathermap.org/data/2.5/";
+  
 
   const [weatherData, setWeatherData] = useState<WeatherDataProps | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -52,6 +53,7 @@ const DisplayWeather: React.FC = () => {
       alert("City not found. Please try again.");
     } finally {
       setIsLoading(false);
+      setSearchCity("");
     }
   };
 
@@ -90,6 +92,7 @@ const DisplayWeather: React.FC = () => {
 
   return (
     <div className="allBody">
+      <h1>STEVE LEONEL Weather-App</h1>
       <div className="container">
         <div className="searchArea">
           <input
